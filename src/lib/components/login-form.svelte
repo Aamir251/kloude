@@ -5,16 +5,36 @@
 	import { Button } from "$lib/components/ui/button/index.js";
 	import { cn } from "$lib/utils.js";
 	import type { HTMLAttributes } from "svelte/elements";
+	import type { SubmitFunction } from "../../routes/login/$types";
+	import { enhance } from "$app/forms";
+	import { toast } from "svelte-sonner";
 
-	let { class: className, ...restProps }: HTMLAttributes<HTMLDivElement> = $props();
+	let { class: className, ...restProps }: HTMLAttributes<HTMLDivElement> =
+		$props();
 
 	const id = $props.id();
+	let loading = $state<boolean>(false);
+
+	const handleSubmit: SubmitFunction = ({ formData, cancel }) => {
+		loading = true;
+		const password = formData.get("password") as string;
+		if (password?.length < 6) {
+			toast.error("Password must be greater than 6 characters");
+			cancel();
+			loading = false;
+		}
+
+		return async ({ update }) => {
+			update();
+			loading = false;
+		};
+	};
 </script>
 
 <div class={cn("flex flex-col gap-6", className)} {...restProps}>
 	<Card.Root class="overflow-hidden p-0">
 		<Card.Content class="grid p-0 md:grid-cols-2">
-			<form class="p-6 md:p-8">
+			<form use:enhance={handleSubmit} method="POST" class="p-6 md:p-8">
 				<div class="flex flex-col gap-6">
 					<div class="flex flex-col items-center text-center">
 						<h1 class="text-2xl font-bold">Welcome back</h1>
@@ -24,18 +44,32 @@
 					</div>
 					<div class="grid gap-3">
 						<Label for="email-{id}">Email</Label>
-						<Input id="email-{id}" type="email" placeholder="m@example.com" required />
+						<Input
+							id="email-{id}"
+							type="email"
+							name="email"
+							placeholder="m@example.com"
+							required
+						/>
 					</div>
 					<div class="grid gap-3">
 						<div class="flex items-center">
 							<Label for="password">Password</Label>
-							<a href="##" class="ml-auto text-sm underline-offset-2 hover:underline">
+							<a
+								href="##"
+								class="ml-auto text-sm underline-offset-2 hover:underline"
+							>
 								Forgot your password?
 							</a>
 						</div>
-						<Input id="password-{id}" type="password" required />
+						<Input
+							id="password-{id}"
+							name="password"
+							type="password"
+							required
+						/>
 					</div>
-					<Button type="submit" class="w-full">Login</Button>
+					<Button disabled={loading} type="submit" class="w-full">Login</Button>
 					<div
 						class="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t"
 					>
@@ -45,7 +79,9 @@
 					</div>
 					<div class="text-center text-sm">
 						Don&apos;t have an account?
-						<a href="/register" class="underline underline-offset-4"> Sign up </a>
+						<a href="/register" class="underline underline-offset-4">
+							Sign up
+						</a>
 					</div>
 				</div>
 			</form>

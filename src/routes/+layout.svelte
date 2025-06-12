@@ -1,6 +1,6 @@
 <script lang="ts">
-  let { children, data } = $props();
   import "../app.css";
+  let { children, data } = $props();
   import { invalidate } from '$app/navigation'
   import { onMount } from 'svelte';
     import { Toaster } from "@/components/ui/sonner";

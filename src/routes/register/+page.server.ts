@@ -1,7 +1,5 @@
 import { type Actions, fail } from "@sveltejs/kit";
 import type { PageServerLoad } from "./$types";
-import { checkIfUserExists, createNewUser } from "@/server/database/user";
-
 
 export const load : PageServerLoad = ({ url }) => {
   const accountStatus = url.searchParams.get('account-status')
@@ -22,31 +20,22 @@ export const actions: Actions = {
     const email = formData.get('email') as string;
     const password = formData.get('password') as string;
 
-    
-
-    /**
-     * Check if user already exists
-    */
-
     const { error, data } = await supabase.auth.signUp({ email, password })
-    
+
     if (error) {
+      console.log({ error });
+      
       return fail(400, {
         message : error.message
       })
     }
+    
+    await supabase.from('user_profiles').insert({
+      id : data.user?.id!,
+      name : name,
+      email,
+    })
 
-    /**
-     * Create the user in user_profiles table
-    */
-    const resp = await createNewUser({ id : data?.user?.id!, email, name });
-
-    if (!resp.success) {
-      return fail(400, {
-        message : resp.error
-      })
-
-    }
 
     return {
       success : true,

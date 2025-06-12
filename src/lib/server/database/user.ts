@@ -10,14 +10,27 @@ type Response = Promise<{
   error: string;
 }>;
 
+/**
+ * 
+ * @param detailsToFetch the details of the user to fetch like the email, avatar_url and so on
+ * @param email the email of the target user
+ * @returns the details of the user
+ */
+export const getCurrentUserProfile = async ( id : string) => {
 
-export const checkIfUserExists = async (email :string) : Promise<boolean> => {
-  const resp = (await supabase.from('user_profiles').select('email').eq('email', email).limit(1))
-
-  if (!resp.count) {
-    return true
+  const resp = await supabase.from('user_profiles').select("*").eq('id', id).limit(1)
+  
+  if(!resp.error) {
+    return {
+      success : true,
+      user : resp.data[0]
+    }
   }
-  return false
+
+  return {
+    success : false,
+    message : 'user not found'
+  }
   
 }
 

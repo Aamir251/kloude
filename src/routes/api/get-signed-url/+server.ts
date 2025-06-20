@@ -9,10 +9,10 @@ export async function POST(requestEvent : RequestEvent) {
   const { request } = requestEvent;
   const { fileName, contentType, userId } = await request.json();
 
-  const key = `users/${userId}/${fileName}`; // Folder-style structure
+  const key = `${userId}/${fileName}`;
 
   const command = new PutObjectCommand({
-    Bucket : 'aamir251',
+    Bucket : 'kloude-users',
     Key : key,
     ContentType : contentType
   })

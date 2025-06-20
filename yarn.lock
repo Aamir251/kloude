@@ -808,10 +808,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@lucide/svelte@^0.513.0":
-  version "0.513.0"
-  resolved "https://registry.yarnpkg.com/@lucide/svelte/-/svelte-0.513.0.tgz#e097021c3d8eec84bd3b95791c6d39b7f4135441"
-  integrity sha512-XwBQMQkMlr9qp9yVg+epx5MzhBBrqul8atO00y/ZfhlKRJuQZVmq3ELibApqyBtj9ys0Ai4FH/SZcODTUFYXig==
+"@lucide/svelte@^0.515.0":
+  version "0.515.0"
+  resolved "https://registry.yarnpkg.com/@lucide/svelte/-/svelte-0.515.0.tgz#f25d03b05b436fe01746a183ae9b759df83af930"
+  integrity sha512-CEAyqcZmNBfYzVgaRmK2RFJP5tnbXxekRyDk0XX/eZQRfsJmkDvmQwXNX8C869BgNeryzmrRyjHhUL6g9ZOHNA==
 
 "@napi-rs/wasm-runtime@^0.2.10":
   version "0.2.10"
@@ -1735,10 +1735,10 @@ bin-links@^5.0.0:
     read-cmd-shim "^5.0.0"
     write-file-atomic "^6.0.0"
 
-bits-ui@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/bits-ui/-/bits-ui-2.5.0.tgz#3093a417a909c04a5b77a92d5577ef3d6192ebbc"
-  integrity sha512-PbjylA1UWd4A/c5AYqie/EVxQ1/8uugmJKLg9whLoBBHbfPEBGhK09dCPrahK9kA6DRHhMmij0XXIUGIfrmNow==
+bits-ui@^2.7.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/bits-ui/-/bits-ui-2.8.0.tgz#4109f1ea4bc8fbfb27a03fc2ffea38e7dddf97bd"
+  integrity sha512-WiTZcCbYLm4Cx6/67NqXVSD0BkfNmdX8Abs84HpIaplX/wRRbg8tkMtJYlLw7mepgGvwGR3enLi6tFkcHU3JXA==
   dependencies:
     "@floating-ui/core" "^1.7.0"
     "@floating-ui/dom" "^1.7.0"

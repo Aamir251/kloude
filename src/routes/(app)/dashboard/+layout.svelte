@@ -7,4 +7,6 @@
 <Navbar />
 
 
-{@render children()}
+<main class="container text-color-black">
+  {@render children()}
+</main>

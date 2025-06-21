@@ -4,7 +4,13 @@
   import UploadFileDrawer from "./upload-file-drawer.svelte";
   import Button from "../ui/button/button.svelte";
 
-  let files: File[] | null = $state(null);
+
+  export type FileType = {
+    file : File
+    progress : number | null
+  }
+
+  let files: FileType[] | null = $state(null);
 
   let inputFiles = $state(undefined);
 
@@ -15,10 +21,15 @@
     const target = e.target as HTMLInputElement;
     if (!target?.files) return;
 
+    const selectedFiles : FileType[] = [...target.files].map((file, index) => ({
+      file,
+      progress : null
+    }))
+
     if (files?.length) {
-      files = [...target.files, ...files];
+      files = [...files, ...selectedFiles];
     } else {
-      files = [...target.files]
+      files = [...selectedFiles]
     }
     showSideDrawer = true
     
@@ -54,8 +65,6 @@
     onchange={handleChange}
     class="absolute w-full h-full bg-gray inset-0 opacity-0 cursor-pointer"
   />
-
-  
     <h5 class="text-h4 font-semibold text-black">
       Drag and drop files, or Browse
     </h5>

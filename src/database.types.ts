@@ -11,27 +11,27 @@ export type Database = {
     Tables: {
       files: {
         Row: {
-          file_type: string | null
           folder_id: string | null
           id: string
           name: string
           size: number
+          type: Database["public"]["Enums"]["file_type"] | null
           user_id: string
         }
         Insert: {
-          file_type?: string | null
           folder_id?: string | null
           id?: string
           name: string
           size: number
+          type?: Database["public"]["Enums"]["file_type"] | null
           user_id: string
         }
         Update: {
-          file_type?: string | null
           folder_id?: string | null
           id?: string
           name?: string
           size?: number
+          type?: Database["public"]["Enums"]["file_type"] | null
           user_id?: string
         }
         Relationships: [
@@ -59,7 +59,7 @@ export type Database = {
           user_id: string
         }
         Insert: {
-          id: string
+          id?: string
           name: string
           parent_id?: string | null
           user_id: string
@@ -119,7 +119,14 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      file_type: "document" | "music" | "video" | "zip"
+      file_type:
+        | "document"
+        | "image"
+        | "video"
+        | "audio"
+        | "compressed"
+        | "application"
+        | "other"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -235,7 +242,15 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
-      file_type: ["document", "music", "video", "zip"],
+      file_type: [
+        "document",
+        "image",
+        "video",
+        "audio",
+        "compressed",
+        "application",
+        "other",
+      ],
     },
   },
 } as const

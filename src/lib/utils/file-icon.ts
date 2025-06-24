@@ -1,28 +1,6 @@
+import { getFileMimeType } from "./file";
 
 
-const getFileIconByMimeType = (file: File) => {
-  const mimeType = file.type;
-
-  if (mimeType.startsWith('image/')) return 'image';
-  if (mimeType.startsWith('video/')) return 'video';
-  if (mimeType.startsWith('audio/')) return 'music';
-  if (mimeType.startsWith('text/')) return 'file-text';
-
-  const specificMimeMap: {
-    [k in string]: string
-  } = {
-    'application/pdf': 'file-text',
-    'application/msword': 'file-text',
-    'application/vnd.openxmlformats-officedocument.wordprocessingml.document': 'file-text',
-    'application/vnd.ms-excel': 'file-spreadsheet',
-    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': 'file-spreadsheet',
-    'application/zip': 'archive',
-    'application/x-rar-compressed': 'archive',
-    'application/json': 'code',
-  };
-
-  return specificMimeMap[mimeType] || 'file';
-};
 
 
 const getFileIconByExtension = (fileName: string) => {
@@ -38,11 +16,11 @@ const getFileIconByExtension = (fileName: string) => {
     'svg': 'image',
 
     // Documents
-    'pdf': 'file-text',
-    'doc': 'file-text',
-    'docx': 'file-text',
-    'txt': 'file-text',
-    'rtf': 'file-text',
+    'pdf': 'document',
+    'doc': 'document',
+    'docx': 'document',
+    'txt': 'document',
+    'rtf': 'document',
 
     // Spreadsheets
     'xls': 'file-spreadsheet',
@@ -54,17 +32,17 @@ const getFileIconByExtension = (fileName: string) => {
     'pptx': 'presentation',
 
     // Archives
-    'zip': 'archive',
-    'rar': 'archive',
-    '7z': 'archive',
-    'tar': 'archive',
-    'gz': 'archive',
+    'zip': 'compressed',
+    'rar': 'compressed',
+    '7z': 'compressed',
+    'tar': 'compressed',
+    'gz': 'compressed',
 
     // Audio
-    'mp3': 'music',
-    'wav': 'music',
-    'flac': 'music',
-    'aac': 'music',
+    'mp3': 'audio',
+    'wav': 'audio',
+    'flac': 'audio',
+    'aac': 'audio',
 
     // Video
     'mp4': 'video',
@@ -88,10 +66,10 @@ const getFileIconByExtension = (fileName: string) => {
 
 const getFileIconType = (file: File) => {
   // Try MIME type first
-  let icon = getFileIconByMimeType(file);
+  let icon : string = getFileMimeType(file);
 
   // Fallback to extension if MIME type gives generic result
-  if (icon === 'file') {
+  if (icon === 'other') {
     icon = getFileIconByExtension(file.name);
   }
 
@@ -104,15 +82,14 @@ export const getFileIcon = (file: File) => {
   const iconConfig : { [ k in string ] : { icon : string }} = {
     'image': { icon: 'image.png' },
     'video': { icon: 'video.png', },
-    'music': { icon: 'music.png', },
-    'file-text': { icon: 'file.png', },
+    'audio': { icon: 'audio.png', },
+    'document': { icon: 'document.png', },
     'file-spreadsheet': { icon: 'spreadsheet.png', },
     'presentation': { icon: 'presentation.png', },
-    'archive': { icon: 'zip.png', },
+    'compressed': { icon: 'zip.png', },
     'code': { icon: 'code.png', },
-    'file': { icon: 'file.png', },
+    'file': { icon: 'document.png', },
   };
-
 
   const icon = iconConfig[iconType].icon
 

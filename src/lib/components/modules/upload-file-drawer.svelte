@@ -4,7 +4,7 @@
   import type { Tables } from "../../../database.types";
   import { toast } from "svelte-sonner";
   import FileListItem from "../ui/file-list-item.svelte";
-  import { saveFilesData } from "@/utils/file";
+  import { getFileType, saveFilesData } from "@/utils/file";
 
   type Props = {
     files: FileType[];
@@ -27,7 +27,7 @@
   };
 
   const filesToSave : Omit<Tables<"files">, "id">[] = files.map(item => ({
-    file_type : item.file.type,
+    type : getFileType(item.file),
     folder_id : null,
     name : item.file.name,
     size : item.file.size,

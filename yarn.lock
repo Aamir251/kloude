@@ -742,14 +742,14 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.25.5.tgz#7fc114af5f6563f19f73324b5d5ff36ece0803d1"
   integrity sha512-TXv6YnJ8ZMVdX+SXWVBo/0p8LTcrUYngpWjvm91TMjjBQii7Oz11Lw5lbDV5Y0TzuhSJHwiH4hEtC1I42mMS0g==
 
-"@floating-ui/core@^1.7.0", "@floating-ui/core@^1.7.1":
+"@floating-ui/core@^1.7.1":
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/@floating-ui/core/-/core-1.7.1.tgz#1abc6b157d4a936174f9dbd078278c3a81c8bc6b"
   integrity sha512-azI0DrjMMfIug/ExbBaeDVJXcY0a7EPvPjb2xAJPa4HeimBX+Z18HK8QQR3jb6356SnDDdxx+hinMLcJEDdOjw==
   dependencies:
     "@floating-ui/utils" "^0.2.9"
 
-"@floating-ui/dom@^1.7.0":
+"@floating-ui/dom@^1.7.1":
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/@floating-ui/dom/-/dom-1.7.1.tgz#76a4e3cbf7a08edf40c34711cf64e0cc8053d912"
   integrity sha512-cwsmW/zyw5ltYTUeeYJ60CnQuPqmGwuGVhG9w0PRaRKkAyi38BT5CKrpIbb+jtahSwUl04cWzSx9ZOIxeS6RsQ==
@@ -1735,17 +1735,16 @@ bin-links@^5.0.0:
     read-cmd-shim "^5.0.0"
     write-file-atomic "^6.0.0"
 
-bits-ui@^2.7.0:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/bits-ui/-/bits-ui-2.8.0.tgz#4109f1ea4bc8fbfb27a03fc2ffea38e7dddf97bd"
-  integrity sha512-WiTZcCbYLm4Cx6/67NqXVSD0BkfNmdX8Abs84HpIaplX/wRRbg8tkMtJYlLw7mepgGvwGR3enLi6tFkcHU3JXA==
+bits-ui@^2.8.6:
+  version "2.8.8"
+  resolved "https://registry.yarnpkg.com/bits-ui/-/bits-ui-2.8.8.tgz#3393bb2a0e9a8e78b3ad9d0842a9bbc3c7840a9c"
+  integrity sha512-SFBFztROZf04e/zUsOlsbm4l6Nn5rBKAXS1nTWYJDxgbcFA+8DtjlZgbr03oFEkTcVZ5GAmLDIjbZ/KNg5GFxw==
   dependencies:
-    "@floating-ui/core" "^1.7.0"
-    "@floating-ui/dom" "^1.7.0"
-    css.escape "^1.5.1"
+    "@floating-ui/core" "^1.7.1"
+    "@floating-ui/dom" "^1.7.1"
     esm-env "^1.1.2"
     runed "^0.28.0"
-    svelte-toolbelt "^0.9.1"
+    svelte-toolbelt "^0.9.2"
     tabbable "^6.2.0"
 
 bowser@^2.11.0:
@@ -1784,11 +1783,6 @@ cookie@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-1.0.2.tgz#27360701532116bd3f1f9416929d176afe1e4610"
   integrity sha512-9Kr/j4O16ISv8zBBhJoi4bXOYNTkFLOqSL3UDB0njXxCXNezjeyVrJyGOWtgfs/q2km1gwBcfH8q1yEGoMYunA==
-
-css.escape@^1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/css.escape/-/css.escape-1.5.1.tgz#42e27d4fa04ae32f931a4b4d4191fa9cddee97cb"
-  integrity sha512-YUifsXXuknHlUsmlgyY0PKzgPOr7/FjCePfHNt0jxm83wHZi44VDMQ7/fGNkjY3/jV1MC+1CmZbaHzugyeRtpg==
 
 data-uri-to-buffer@^4.0.0:
   version "4.0.1"
@@ -2303,10 +2297,10 @@ svelte-toolbelt@^0.7.1:
     runed "^0.23.2"
     style-to-object "^1.0.8"
 
-svelte-toolbelt@^0.9.1:
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/svelte-toolbelt/-/svelte-toolbelt-0.9.1.tgz#e41727807d062ddee8a89b75d78051f72177b60a"
-  integrity sha512-wBX6MtYw/kpht80j5zLpxJyR9soLizXPIAIWEVd9llAi17SR44ZdG291bldjB7r/K5duC0opDFcuhk2cA1hb8g==
+svelte-toolbelt@^0.9.2:
+  version "0.9.2"
+  resolved "https://registry.yarnpkg.com/svelte-toolbelt/-/svelte-toolbelt-0.9.2.tgz#53fb18201080e51ccff4ff97f96da8854c5e93e7"
+  integrity sha512-REb1cENGnFbhNSmIdCb1SDIpjEa3n1kXhNVHqGNEesjmPX3bG87gUZiCG8cqOt9AAarqzTzOtI2jEEWr/ZbHwA==
   dependencies:
     clsx "^2.1.1"
     runed "^0.28.0"

@@ -3,7 +3,8 @@
   let { children, data } = $props();
   import { invalidate } from '$app/navigation'
   import { onMount } from 'svelte';
-    import { Toaster } from "@/components/ui/sonner";
+  import { Toaster } from "@/components/ui/sonner";
+    import Navbar from "@/components/layout/navbar/navbar.svelte";
 
   let { session, supabase } = $derived(data)
   onMount(() => {
@@ -18,5 +19,15 @@
 
 </script>
 
+<svelte:head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" >
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+</svelte:head>
+
+
 <Toaster />
-{@render children()}
+<Navbar />
+<main class="text-color-black font-manrope w-11/12 mx-auto">
+  {@render children()}
+</main>

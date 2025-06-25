@@ -808,10 +808,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@lucide/svelte@^0.513.0":
-  version "0.513.0"
-  resolved "https://registry.yarnpkg.com/@lucide/svelte/-/svelte-0.513.0.tgz#e097021c3d8eec84bd3b95791c6d39b7f4135441"
-  integrity sha512-XwBQMQkMlr9qp9yVg+epx5MzhBBrqul8atO00y/ZfhlKRJuQZVmq3ELibApqyBtj9ys0Ai4FH/SZcODTUFYXig==
+"@lucide/svelte@^0.515.0":
+  version "0.515.0"
+  resolved "https://registry.yarnpkg.com/@lucide/svelte/-/svelte-0.515.0.tgz#f25d03b05b436fe01746a183ae9b759df83af930"
+  integrity sha512-CEAyqcZmNBfYzVgaRmK2RFJP5tnbXxekRyDk0XX/eZQRfsJmkDvmQwXNX8C869BgNeryzmrRyjHhUL6g9ZOHNA==
 
 "@napi-rs/wasm-runtime@^0.2.10":
   version "0.2.10"
@@ -2260,10 +2260,10 @@ style-to-object@^1.0.8:
   dependencies:
     inline-style-parser "0.2.4"
 
-supabase@^2.24.3:
-  version "2.24.3"
-  resolved "https://registry.yarnpkg.com/supabase/-/supabase-2.24.3.tgz#549cc1f9a0e4b665fc25f9c6ae24e9149c75759e"
-  integrity sha512-mh9pi4C5pM159GyYE+Rv9qL8kg1kqzimQ4FBr6UH/WhzB/VcDaA+vpn/VeRC3CGVKr+d89Ra5MjDWg+/UoPpXg==
+supabase@^2.26.9:
+  version "2.26.9"
+  resolved "https://registry.yarnpkg.com/supabase/-/supabase-2.26.9.tgz#58955d2eb8708353841507035e4bfa819ac5e686"
+  integrity sha512-wHl7HtAD2iHMVXL8JZyfSjdI0WYM7EF0ydThp1tSvDANaD2JHCZc8GH1NdzglbwGqdHmjCYeSZ+H28fmucYl7Q==
   dependencies:
     bin-links "^5.0.0"
     https-proxy-agent "^7.0.2"

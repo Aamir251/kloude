@@ -1,23 +1,14 @@
 <script lang="ts">
   import FoldersList from '@/components/modules/folders-list.svelte';
   import NotFound from '@/components/ui/file/not-found.svelte';
-  import { toast } from 'svelte-sonner';
 
-  const { data, form } = $props();
+  const { data } = $props();
 
   type FolderType = {
     name: string;
     id: string;
   };
 
-  $effect(() => {
-    if (form?.message) {
-      toast.error(form.message)
-    }
-    if (form?.success) {
-      toast.success('Folder Created!', { duration : 1200 })
-    }
-  })
 
 </script>
 
@@ -48,8 +39,6 @@
     {/if}
   {/await}
 </section>
-
-
 
 
 

@@ -4,7 +4,7 @@
 </script>
 
 <header>
-  <div class="relative  w-11/12 mx-auto py-3">
+  <div class="relative w-11/12 mx-auto py-3">
     <Navlogo />
     <Navlinks />
   </div>

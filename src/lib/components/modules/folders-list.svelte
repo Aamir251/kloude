@@ -1,41 +1,33 @@
 <script lang="ts">
-    import Button from "../ui/button/button.svelte";
+    import Folder from "../icons/folder.svelte";
     import NotFound from "../ui/file/not-found.svelte";
-    import CreateFolderDialogue from "./create-folder-dialogue.svelte";
 
-  type Folder = {
+  type FolderType = {
     id : string
     name : string
   }
 
   type Props = {
-    folders : Folder[]
+    folders : FolderType[]
   }
-  let { folders } : Props = $props()
 
-  const checkIfFolderAlreadyExists = (folderName : string) => {
-    return folders.some(folder => folder.name === folderName)
-  }
-  
-  let isCreateFolderOpen : boolean = $state(false)
+  let { folders } : Props = $props()
 
 </script>
 
 
 {#if folders.length}
-  {#each folders as folder}
-    <h4>{folder.name}</h4>
+  <div class="flex pt-10 flex-wrap gap-8">
+    {#each folders as folder}
+    <a href="/folders/{folder.id}" class="flex flex-col gap-1.5 py-3 px-8 rounded-md shadow border border-gray/20 justify-center items-center hover:text-gray transition">
+      <Folder />
+      <h3 class="text-sm font-medium">{folder.name}</h3>
+    </a>
+
   {/each}
+  </div>
 {:else}
   <div class="not-found">
     <NotFound />
   </div>
 {/if}
-
-
-
-<div class="fixed bottom-10 right-10">
-  <Button onclick={() => isCreateFolderOpen = true}>Create Folder</Button>
-</div>
-
-<CreateFolderDialogue checkIfFolderAlreadyExists={checkIfFolderAlreadyExists} bind:open={isCreateFolderOpen} />

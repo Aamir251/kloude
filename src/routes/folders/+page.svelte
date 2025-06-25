@@ -5,7 +5,7 @@
 
   const { data, form } = $props();
 
-  type Folder = {
+  type FolderType = {
     name: string;
     id: string;
   };
@@ -53,7 +53,7 @@
 
 
 
-  {#snippet files(files: Folder[])}
+  {#snippet files(files: FolderType[])}
     {#if files.length}
       {#each files as file}
         <h4>{file.name}</h4>

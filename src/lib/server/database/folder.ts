@@ -53,3 +53,23 @@ export const createFolder = async (name : string, user_id : string, parent_id : 
     data : resp.data
   }
 }
+
+
+export const deleteFolder = async (user_id : string, id : string) => {
+  const resp = await supabase.from('folder').delete().match({
+    user_id,
+    id
+  })
+
+  if (resp.error) {
+    return {
+      success : false,
+      error : resp.error
+    }
+  }
+
+  return {
+    success : true,
+    data : resp.data
+  }
+}

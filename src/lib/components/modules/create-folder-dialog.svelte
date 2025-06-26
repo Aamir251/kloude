@@ -23,6 +23,9 @@
 
       const parent_id = page.params?.id ?? null;
 
+      console.log({ parent_id });
+      
+
       const resp = await fetch("/api/create-folder", {
         method: "POST",
         body: JSON.stringify({ name, parent_id }),

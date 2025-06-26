@@ -1,6 +1,6 @@
 <script lang="ts">
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
-  import CreateFolderDialogue from "@/components/modules/create-folder-dialogue.svelte";
+  import CreateFolderDialog from "@/components/modules/create-folder-dialog.svelte";
 
   let folderDialogOpen : boolean = $state(false);
 
@@ -19,5 +19,5 @@
   </DropdownMenu.Content>
 </DropdownMenu.Root>
 
-<CreateFolderDialogue bind:open={folderDialogOpen} />
+<CreateFolderDialog bind:open={folderDialogOpen} />
 

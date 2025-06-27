@@ -18,7 +18,7 @@
         </AlertDialog.Description>
       </AlertDialog.Header>
       <AlertDialog.Footer>
-        <AlertDialog.Cancel disabled={loading} type="button"
+        <AlertDialog.Cancel disabled={loading} type="button" onclick={closeDialog}
           >Cancel</AlertDialog.Cancel
         >
         <Button disabled={loading} type="submit">{btnText}</Button>

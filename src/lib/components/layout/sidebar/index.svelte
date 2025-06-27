@@ -117,7 +117,7 @@
   <div class="mt-10">
     <div class="space-y-3 bg-primary-white rounded-md">
       <div
-        class="grid grid-cols-[2fr_0.5fr_0.2fr] gap-x-6 text-sm text-gray font-medium"
+        class="grid grid-cols-[2fr_0.5fr_0.2fr] gap-x-4 text-sm text-gray font-medium"
       >
         <h5 class="translate-x-5">Name</h5>
         <h5 class="mx-auto">File Size</h5>

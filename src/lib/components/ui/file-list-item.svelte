@@ -14,7 +14,7 @@
 
 </script>
 
-<div transition:fly={{ x : 30 }} class="grid grid-cols-[2fr_0.5fr_0.2fr] gap-x-6 items-center py-4 relative">
+<div transition:fly={{ x : 30 }} class="grid grid-cols-[2fr_0.5fr_0.2fr] gap-x-4 items-center py-4 relative">
     <div class="flex items-center gap-x-4">
       <figure class="shrink-0 p-3 bg-white rounded-md">
         <img
@@ -25,8 +25,8 @@
           class="w-6 h-6 object-contain"
         />
       </figure>
-      <div>
-        <h4 class="font-medium line-clamp-1 text-h6">{item.file.name}</h4>
+      <div class="overflow-hidden">
+        <h4 class="font-medium line-clamp-1 text-h6 text-ellipsis" title="{item.file.name}">{item.file.name}</h4>
         {#if item.progress}
           <div class="flex gap-x-2 items-center">
             <Progress value={item.progress} class="h-1.5 w-32" />
@@ -35,8 +35,6 @@
             {:else} 
               <span class="text-gray text-sm">{item.progress}%</span>
             {/if}
-
-          
           </div>
         {/if}
       </div>

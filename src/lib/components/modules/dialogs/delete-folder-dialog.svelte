@@ -1,6 +1,6 @@
 <script lang="ts">
   import { invalidate } from "$app/navigation";
-  import Dialog from "@/components/ui/dropdown-menu/dialog.svelte";
+  import FormDialog from "@/components/ui/dropdown-menu/form-dialog.svelte";
   import { toast } from "svelte-sonner";
   
   let { isOpen = $bindable(), folderId } = $props()
@@ -37,7 +37,7 @@
 
 </script>
 
-<Dialog
+<FormDialog
   btnText="Delete"
   closeDialog={() => {
 
@@ -47,5 +47,5 @@
   title='Are you sure you want to delete this folder?'
   bind:isOpen
 >
-  heheheheh
-</Dialog>
+  This action cannot be undone
+</FormDialog>

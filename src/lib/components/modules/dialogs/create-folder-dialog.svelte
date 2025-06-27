@@ -1,11 +1,9 @@
 <script lang="ts">
-  import * as AlertDialog from "$lib/components/ui/alert-dialog/index.js";
   import { toast } from "svelte-sonner";
-  import Button from "../../ui/button/button.svelte";
   import { Input } from "../../ui/input";
   import { page } from "$app/state";
   import { invalidateAll } from "$app/navigation";
-    import Dialog from "@/components/ui/dropdown-menu/dialog.svelte";
+  import FormDialog from "@/components/ui/dropdown-menu/form-dialog.svelte";
 
   type Props = {
     open: boolean;
@@ -50,7 +48,7 @@
   };
 </script>
 
-<Dialog
+<FormDialog
   btnText='Create'
   isOpen={open}
   handleSubmit={handleSubmit}
@@ -66,4 +64,4 @@
     required
     aria-required
   />
-</Dialog>
+</FormDialog>

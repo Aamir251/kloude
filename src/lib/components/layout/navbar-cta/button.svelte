@@ -1,6 +1,6 @@
 <script lang="ts">
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
-  import CreateFolderDialog from "@/components/modules/create-folder-dialog.svelte";
+  import CreateFolderDialog from "@/components/modules/dialogs/create-folder-dialog.svelte";
 
   let folderDialogOpen : boolean = $state(false);
 

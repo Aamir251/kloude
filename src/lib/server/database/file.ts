@@ -16,7 +16,7 @@ export const getRootFiles = async (user_id : string) => {
   }
 
   return {
-    files : resp.data
+    data : resp.data
   }
 }
 
@@ -33,6 +33,6 @@ export const getFiles = async (user_id : string, folder_id : string) => {
   }
 
   return {
-    files : resp.data
+    data : resp.data
   }
 }

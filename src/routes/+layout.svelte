@@ -28,6 +28,6 @@
 
 <Toaster />
 <Navbar />
-<main class="text-color-black font-manrope w-11/12 mx-auto">
+<main class="text-color-black font-manrope w-[96%] mx-auto">
   {@render children()}
 </main>

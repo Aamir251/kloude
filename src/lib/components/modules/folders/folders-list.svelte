@@ -1,8 +1,8 @@
 <script lang="ts">
-  import FolderIcon from "../icons/folder.svelte";
-  import NotFound from "../ui/file/not-found.svelte";
+  import FolderIcon from "../../icons/folder.svelte";
+  import NotFound from "../../ui/file/not-found.svelte";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
-  import DeleteFolderDialog from "./dialogs/delete-folder-dialog.svelte";
+  import DeleteFolderDialog from "../dialogs/delete-folder-dialog.svelte";
 
   type FolderType = {
     id : string

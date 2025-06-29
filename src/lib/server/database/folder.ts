@@ -39,3 +39,13 @@ export const deleteFolder = async (user_id : string, id : string) : DatabaseResp
     id
   }))
 }
+
+export const renameFolder = async (user_id : string, id : string, name : string) : DatabaseResponse => {
+  
+  return handleResponse(await supabase.from('folder').update({
+    name
+  }).match({
+    user_id,
+    id
+  }))
+}

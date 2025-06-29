@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { enhance } from "$app/forms";
   import * as AlertDialog from "$lib/components/ui/alert-dialog/index.js";
   import Button from "../button/button.svelte";
 
@@ -14,7 +13,7 @@
       <AlertDialog.Header>
         <AlertDialog.Title>{title}</AlertDialog.Title>
         <AlertDialog.Description>
-          {@render children()}
+          {@render children?.()}
         </AlertDialog.Description>
       </AlertDialog.Header>
       <AlertDialog.Footer>

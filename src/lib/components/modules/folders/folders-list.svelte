@@ -3,6 +3,7 @@
   import NotFound from "../../ui/file/not-found.svelte";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
   import DeleteFolderDialog from "../dialogs/delete-folder-dialog.svelte";
+    import RenameFolderDialog from "../dialogs/rename-folder-dialog.svelte";
 
   type FolderType = {
     id : string
@@ -16,12 +17,18 @@
   let { folders } : Props = $props()
 
   let isDeleteFolderDialogOpen = $state<boolean>(false)
+  let isRenameFolderDialogOpen = $state<boolean>(false)
 
   let selectedFolder = $state<string>('')
 
   const handleDeleteFolderClick = (id : string) => {
     selectedFolder = id
     isDeleteFolderDialogOpen = true
+  }
+
+  const handleRenameFolderClick = (id : string) => {
+    selectedFolder = id
+    isRenameFolderDialogOpen = true
   }
 
 </script>
@@ -58,7 +65,7 @@
       <DropdownMenu.Content>
         <DropdownMenu.Group class="font-medium">
           <DropdownMenu.Item onclick={handleDeleteFolderClick.bind(null, id)}>Delete folder</DropdownMenu.Item>
-          <DropdownMenu.Item >Rename folder</DropdownMenu.Item>
+          <DropdownMenu.Item onclick={handleRenameFolderClick.bind(null, id)} >Rename folder</DropdownMenu.Item>
         </DropdownMenu.Group>
       </DropdownMenu.Content>
     </DropdownMenu.Root>
@@ -68,4 +75,8 @@
 
 {#if isDeleteFolderDialogOpen && selectedFolder}
   <DeleteFolderDialog bind:isOpen={isDeleteFolderDialogOpen} folderId={selectedFolder} />
+{/if}
+
+{#if isRenameFolderDialogOpen && selectedFolder}
+  <RenameFolderDialog bind:isOpen={isRenameFolderDialogOpen} folderId={selectedFolder} />
 {/if}

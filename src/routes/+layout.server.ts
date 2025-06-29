@@ -14,10 +14,10 @@ export const load = async ({ locals: { safeGetSession }, cookies }) => {
     }
   }
 
-
   return {
     session,
     cookies: cookies.getAll(),
     userProfile
   }
 }
+

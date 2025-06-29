@@ -129,9 +129,9 @@ export const formatSize = (bytes: number, decimals = 0) => {
   return parseFloat(bytes.toFixed(decimals)) + ' ' + units[i]
 }
 
-export const saveFilesData = async (files: Omit<Tables<"files">, "id">[]) => {
+export const saveFilesData = async (files: Omit<Tables<"files">, "id" | "user_id">[]) => {
   try {
-    const resp = await fetch(`http://localhost:5173/api/save-file-data`, {
+    const resp = await fetch(`/api/file/save-data`, {
       method: "POST",
       body: JSON.stringify(files)
     })

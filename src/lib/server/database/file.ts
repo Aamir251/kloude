@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 import { supabase } from "@/client/supabase"
 
 /**
@@ -24,7 +22,7 @@ export const getRootFiles = async (user_id : string) => {
 
 export const getFiles = async (user_id : string, folder_id : string) => {
   const resp = await supabase.from('files')
-    .select("name, id, size")
+    .select("name, id, size, type")
     .match({ user_id, folder_id })
     
   
@@ -38,4 +36,3 @@ export const getFiles = async (user_id : string, folder_id : string) => {
     data : resp.data
   }
 }
->>>>>>> Stashed changes

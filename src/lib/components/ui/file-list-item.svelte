@@ -14,23 +14,27 @@
 
 </script>
 
-<div transition:fly={{ x : 30 }} class="grid grid-cols-[2fr_1fr_0.5fr] gap-x-6 items-center py-4 relative">
+<div transition:fly={{ x : 30 }} class="grid grid-cols-[2fr_0.5fr_0.2fr] gap-x-4 items-center py-4 relative">
     <div class="flex items-center gap-x-4">
       <figure class="shrink-0 p-3 bg-white rounded-md">
         <img
           src={getFileIcon(item.file)}
           alt={item.file.name}
-          width="30px"
-          height="30px"
-          class="w-8 h-8 object-contain"
+          width="20px"
+          height="20px"
+          class="w-6 h-6 object-contain"
         />
       </figure>
-      <div>
-        <h4 class="font-medium line-clamp-1">{item.file.name}</h4>
+      <div class="overflow-hidden">
+        <h4 class="font-medium line-clamp-1 text-h6 text-ellipsis" title="{item.file.name}">{item.file.name}</h4>
         {#if item.progress}
           <div class="flex gap-x-2 items-center">
             <Progress value={item.progress} class="h-1.5 w-32" />
-            <span class="text-gray text-sm">{item.progress}%</span>
+            {#if item.progress === 100 }
+              <img src="/icons/checked.png" width="12" height="12" title="upload completed" alt="upload complete" />
+            {:else} 
+              <span class="text-gray text-sm">{item.progress}%</span>
+            {/if}
           </div>
         {/if}
       </div>
@@ -47,13 +51,5 @@
       >
         <Cross />
       </button>
-      {#if item.progress === 100}
-        <img
-          src="/icons/checked.png" 
-          width="14" height="14" 
-          class="absolute top-9 right-3" 
-          title="upload completed" alt="upload complete" 
-        />
-      {/if}
     </div>
   </div>

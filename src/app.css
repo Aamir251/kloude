@@ -76,6 +76,10 @@
   font-family : "Manrope", sans-serif;
 }
 
+@utility no-scrollbar {
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
+
 @theme inline {
 
   --color-primary-white: #FAFAFA;
@@ -116,6 +120,19 @@
   --text-h4-mobile--line-height: 120%;
   --text-h4-mobile--letter-spacing: -0.02em;
   --text-h4-mobile--font-weight: 500;
+
+   /* h5 */
+  --text-h5: 1.05rem;
+  --text-h4--line-height: 120%;
+  --text-h4--letter-spacing: -0.02em;
+  --text-h4--font-weight: 500;
+
+
+   /* h6 */
+  --text-h6: 0.95rem;
+  --text-h6--line-height: 120%;
+  --text-h6--letter-spacing: -0.02em;
+  --text-h6--font-weight: 500;
 
 
 
@@ -166,4 +183,11 @@
 @utility container {
   margin-inline: auto;
   padding-inline: 1rem;
+}
+
+[has-files="true"] .not-found {
+  display: none;
+}
+[has-files="false"] .not-found:last-child {
+  display: none;
 }

@@ -9,7 +9,7 @@
 </script>
 
 
-<div has-files="{hasFiles}">
+<div class="pt-16" has-files="{hasFiles}">
   {#await folders}
     <h3>Loading Folders</h3> 
   {:then resp}

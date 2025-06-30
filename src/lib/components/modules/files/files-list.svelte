@@ -3,6 +3,7 @@
   import { getFileListItemIcon } from "@/utils/file-icon";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
   import type { Tables } from "../../../../database.types";
+    import DeleteFileDialog from "../dialogs/delete-file-dialog.svelte";
 
   let { files, hasFiles = $bindable() } = $props()
   
@@ -14,6 +15,8 @@
   let isDeleteFileDialogOpen : boolean = $state(false)
 
   const handleDeleteFileClick = (id : string) => {
+    console.log({ id, isDeleteFileDialogOpen });
+    
     selectedFile = id
     isDeleteFileDialogOpen = true
   }
@@ -49,9 +52,14 @@
       </DropdownMenu.Trigger>
       <DropdownMenu.Content>
         <DropdownMenu.Group class="font-medium">
-          <DropdownMenu.Item onclick={handleDeleteFileClick.bind(null, "id")}>Delete folder</DropdownMenu.Item>
+          <DropdownMenu.Item onclick={handleDeleteFileClick.bind(null, item.id)}>Delete file</DropdownMenu.Item>
         </DropdownMenu.Group>
       </DropdownMenu.Content>
     </DropdownMenu.Root>
   </div>
 {/snippet}
+
+
+{#if selectedFile && isDeleteFileDialogOpen}
+  <DeleteFileDialog fileId={selectedFile} isOpen={isDeleteFileDialogOpen} />
+{/if}

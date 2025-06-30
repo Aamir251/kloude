@@ -19,8 +19,6 @@ export const POST = async (req : RequestEvent) => {
   }
   const resp = await deleteFolder(user_id, folder_id);
   
-  console.log('Resp ', resp);
-  
   if (!resp.success) {
     return json({ message : resp.error }, { status : 403 })
   }

@@ -2,7 +2,7 @@
   import * as Tooltip from "$lib/components/ui/tooltip/index.js";
 
   const links = [
-    { id: 0, href: "/dashboard", name: "Dashboard", icon: "/icons/dashboard.svg" },
+    { id: 0, href: "/", name: "Dashboard", icon: "/icons/dashboard.svg" },
     { id: 1, href: "/folders", name: "My Files", icon: "/icons/folders.svg" },
     { id: 2, href: "/", name: "Shared Files", icon: "/icons/shared.svg" },
     { id: 3, href: "/", name: "Trash", icon: "/icons/trash.svg" },

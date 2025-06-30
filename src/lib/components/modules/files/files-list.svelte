@@ -24,7 +24,7 @@
 </script>
 
 {#if files?.length}
-  <div class="flex pt-10 flex-wrap gap-8">
+  <div class="flex flex-wrap gap-8">
     {#each files as item}
       {@render file(item)}
     {/each}

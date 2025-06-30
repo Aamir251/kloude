@@ -35,7 +35,7 @@
 
 
 {#if folders.length}
-  <div class="flex pt-10 flex-wrap gap-8">
+  <div class="flex flex-wrap gap-8">
     {#each folders as item}
     {@render folder(item.id, item.name)}
 

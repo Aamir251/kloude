@@ -1,18 +1,10 @@
 <script lang="ts">
-    import FilesList from '@/components/modules/files/files-list.svelte';
+  import FilesList from '@/components/modules/files/files-list.svelte';
   import FoldersList from '@/components/modules/folders/folders-list.svelte';
-  import NotFound from '@/components/ui/file/not-found.svelte';
-  import { onMount } from 'svelte';
 
   let { folders, files } = $props()
 0
-  type FolderType = {
-    name: string;
-    id: string;
-  };
-
   let hasFiles : boolean = $state(false)
-
 
 </script>
 

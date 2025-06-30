@@ -1,3 +1,4 @@
+import type { Enums } from "../../database.types";
 import { getFileMimeType } from "./file";
 
 
@@ -76,23 +77,28 @@ const getFileIconType = (file: File) => {
   return icon;
 };
 
+const iconConfig : { [ k in string ] : { icon : string }} = {
+  'image': { icon: 'image.png' },
+  'video': { icon: 'video.png', },
+  'audio': { icon: 'audio.png', },
+  'document': { icon: 'document.png', },
+  'file-spreadsheet': { icon: 'spreadsheet.png', },
+  'presentation': { icon: 'presentation.png', },
+  'compressed': { icon: 'zip.png', },
+  'code': { icon: 'code.png', },
+  'file': { icon: 'document.png', },
+};
+
 export const getFileIcon = (file: File) => {
   const iconType = getFileIconType(file);
-
-  const iconConfig : { [ k in string ] : { icon : string }} = {
-    'image': { icon: 'image.png' },
-    'video': { icon: 'video.png', },
-    'audio': { icon: 'audio.png', },
-    'document': { icon: 'document.png', },
-    'file-spreadsheet': { icon: 'spreadsheet.png', },
-    'presentation': { icon: 'presentation.png', },
-    'compressed': { icon: 'zip.png', },
-    'code': { icon: 'code.png', },
-    'file': { icon: 'document.png', },
-  };
 
   const icon = iconConfig[iconType].icon
 
   return `/icons/file-types/${icon}`
+}
 
+export const getFileListItemIcon = (type : Enums<"file_type">) => {
+  const icon = iconConfig[type]?.icon || "document.png"
+
+  return `/icons/file-types/${icon}`
 }

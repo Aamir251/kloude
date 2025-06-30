@@ -3,7 +3,7 @@
   import NotFound from "../../ui/file/not-found.svelte";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
   import DeleteFolderDialog from "../dialogs/delete-folder-dialog.svelte";
-    import RenameFolderDialog from "../dialogs/rename-folder-dialog.svelte";
+  import RenameFolderDialog from "../dialogs/rename-folder-dialog.svelte";
 
   type FolderType = {
     id : string

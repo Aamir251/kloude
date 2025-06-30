@@ -44,7 +44,7 @@
           <img src="{getFileListItemIcon(item.type!)}" alt="{item.name}" />
         </div>
       </div>
-      <h3 class="text-sm font-bold">{item.name}</h3>
+      <h3 class="text-sm font-bold text-ellipsis line-clamp-2">{item.name}</h3>
     </div>
     <DropdownMenu.Root>
       <DropdownMenu.Trigger class="-translate-y-3 ">

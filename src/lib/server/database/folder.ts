@@ -22,6 +22,13 @@ export const getFolders = async (user_id : string, parent_id : string) => {
   )
 }
 
+export const getCurrentFolder = async (user_id : string, id : string) => {
+  return handleResponse(await supabase.from('folder').select('name').match({
+    user_id,
+    id
+  }))
+}
+
 export const createFolder = async (name : string, user_id : string, parent_id : string | null = null) : DatabaseResponse => {
 
   return handleResponse(await supabase.from('folder').insert({

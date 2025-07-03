@@ -1,6 +1,5 @@
 import { supabase } from "@/client/supabase"
 import { handleResponse } from "@/utils/helpers";
-import { json } from "@sveltejs/kit";
 
 /**
  * Gets the files in the root directory
@@ -45,3 +44,19 @@ export const deleteFile = async (user_id : string, id : string) => {
     id
   }))
 }
+
+export type GetStorageCostReturnType = ReturnType<typeof getStorageCost>;
+
+export const getStorageCost = async (user_id : string) => {
+  return handleResponse(await supabase.rpc('fn_get_user_storage_cost', {
+    p_user_id : user_id
+  }))
+}
+
+export type GetStorageStatsReturnType = ReturnType<typeof getStorageStats>;
+
+export const getStorageStats = async (user_id : string) => {
+  return handleResponse(await supabase.rpc('fn_get_storage_stats', {
+    p_user_id : user_id
+  }))
+} 

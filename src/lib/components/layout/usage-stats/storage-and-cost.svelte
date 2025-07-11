@@ -14,7 +14,7 @@
 <div class="bg-primary-white divide-y divide-gray/20 shadow">
 
   {@render listItem('Storage Used', `${size ?? 0}GB`)}
-  {@render listItem('Storage Cost', `$${cost ?? 0}/month`)}
+  <!-- {@render listItem('Storage Cost', `$${cost ?? 0}/month`)} -->
 
 </div>
 

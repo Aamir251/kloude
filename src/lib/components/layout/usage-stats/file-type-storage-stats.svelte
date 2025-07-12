@@ -14,6 +14,7 @@
   };
 
   let { stats }: Props = $props();
+
   
   const statsObject : { [key in Enums<"file_type">]?: Stat | undefined } = {}
 
